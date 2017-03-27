@@ -510,10 +510,11 @@ static Ptr<IVideoCapture> IVideoCapture_create(const String& filename)
 {
     int  domains[] =
     {
-        CV_CAP_ANY,
-#ifdef HAVE_GPHOTO2
-        CV_CAP_GPHOTO2,
-#endif
+// hack to be able to read pipe correctly the first time (otherwise we lose it)
+//         CV_CAP_ANY,
+// #ifdef HAVE_GPHOTO2
+//         CV_CAP_GPHOTO2,
+// #endif
         -1, -1
     };
 
